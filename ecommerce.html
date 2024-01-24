@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<style> 
+    li{
+        display :inline;
+    }
+</style>
+<body>
+ <h1 class="text-[3rem] text-center my-5">Ecommerce</h1>
+ <div class="max-w-[1300px] m-auto border grid grid-cols-[25%_auto] gap-4 p-4 ">
+    <div class=" py-5">
+        <h1 class="text-[30px] text-center">Category </h1>
+        <ul class="px-5 mt-3" id="pcat">
+            
+           
+
+        </ul>
+    </div>
+    <div class=" px-2 py-5 grid grid-cols-3 gap-5" id="myshop">
+
+      
+    </div>
+
+ </div>
+</body>
+<script>
+    let shop = document.querySelector("#myshop")
+    let category = document.querySelector("#pcat")
+     let count=0;
+
+     //let items = '';
+
+     var myItems = [];
+
+     var flag = 0;
+
+    const productCat = ()=>{
+        fetch("https://dummyjson.com/products/categories")
+        .then(res=>{
+            return res.json()
+        })
+        .then(final=>{
+            let cat = '';
+            final.map((v,i)=>{
+                cat+=`<input type="checkbox" name= "product" id=${v} onclick = "showLaptop(this)">&nbsp;&nbsp;<li onclick="getcatdata(this)">${v}</li><br>`;
+            })
+            category.innerHTML=cat
+        })
+    }
+    productCat()
+
+    function showLaptop(items){
+        console.log("######count",count);
+      
+        if (items.checked) {
+            myItems.push(items.id)
+            console.log("checked",myItems)  // items.id
+            flag=1;
+            getProduct(items);
+         } else {
+            console.log("Un-checked",items.id)
+
+            var index = myItems.indexOf(items.id); // get index if value found otherwise -1
+
+            if (index > -1) { //if found
+                myItems.splice(index, 1);
+            console.log("Un-checked",myItems)
+            if (myItems.length == 0)
+            {
+                console.log("most welcome");
+                flag = 0;
+                items='';
+                getProduct(items);
+            }
+             }
+            
+         }
+    }
+
+    const getProduct = (cname='')=>{
+       
+
+        console.log(">>>>>>>>>>##>>>>",cname.id)
+        let api;
+       /* if(cname==="")*/if(flag == 0){
+
+      //  flag =0;
+            api="https://dummyjson.com/products"
+        }
+        else if(cname !='') {
+            flag=1;
+            api=`https://dummyjson.com/products/category/${cname.id}`
+
+
+
+        }
+        fetch(api)
+        .then((res)=>{
+            return res.json()
+        })
+        .then((final)=>{
+             let items = '';
+
+            console.log("all products :",final.products);
+          
+            let temp 
+            final.products.map((v,i)=>{
+               
+                items+=`<div class="card bg-gray-500 ">
+            <img src="${v.thumbnail}" alt="" class="h-[200px] w-full">
+            <div class="px-4 text-left">
+                <h2 class="text-[40px] text-white font-bold ">${v.title}</h2>
+                <p class="text-[19px] pt-3 text-white ">${v.description}</p>
+                <h5 class="text-white py-4">${v.price}</h5>
+            </div>
+            
+        </div>`;
+            })
+
+           shop.innerHTML=items;
+        })
+    }
+
+   
+getProduct()
+
+    function getcatdata(cname){
+        getProduct(cname.innerText)
+    }
+
+</script>
+</html>
