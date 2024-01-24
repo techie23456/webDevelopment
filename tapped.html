@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tapped Layout</title>
+    <style>
+
+        body{
+            background: #ccc;
+            font-family: sans-serif;
+        }
+
+        .myTabs{
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 600px;
+            margin: 50 auto;
+            padding: 25px;
+        }
+
+        .myTabs input[type="radio"]{
+            display:none;
+        }
+
+        .myTabs label{
+            padding: 25px ;
+            background: gray;
+            font-weight: bold;
+
+
+        }
+
+        .myTabs .tab{
+
+            width:100%;
+            padding: 20px;
+            background: #fff;
+            order:1;
+
+            display: none;
+
+
+        }
+
+        .myTabs .tab h2{
+            font-size: 3em;
+        }
+
+        .myTabs input[type="radio"]:checked + label + .tab{
+
+            display: block;
+
+        }
+
+        .myTabs input[type="radio"]:checked + label{
+
+            background: white;
+
+}
+
+
+
+
+    </style>
+</head>
+<body>
+
+    <div class="myTabs">
+        <input type = "radio" id="tabFree" name ="myTabs" checked ="checked">
+        <label for ="tabFree" >Free</label>
+        <div class="tab">
+            <h2>Free</h2>
+            <p> Free Free Free Free Free Free Free Free Free Free Free Free Free Free</p>
+        </div>
+
+        <input type = "radio" id="tabSilver" name ="myTabs">
+        <label for ="tabSilver" >Silver</label>
+        <div class="tab">
+            <h2>Silver</h2>
+            <p>Silver Silver Silver Silver Silver Silver Silver Silver</p>
+        </div>
+
+        <input type = "radio" id="tabGold" name ="myTabs">
+        <label for ="tabGold">Gold</label>
+        <div class="tab">
+            <h2>Free</h2>
+            <p>Gold Gold Gold Gold Gold Gold Gold Gold Gold Gold Gold Gold</p>
+        </div>
+
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[lightblue]">
+    <div class="max-w-[1320px] mx-auto py-[40px]">
+        <h1 class="text-[40px] font-bold">Simple weather App        </h1>
+        <form action="" class="py-[15px]  max-w-[500px] grid grid-cols-[70%_auto]">
+            <input type="text" class="h-[50px] pl-[10px]" name="cityName"/>
+            <button class="bg-[yellow] text-[25px]">Submit</button>
+        </form>
+
+        <div class="bg-[white] max-w-[300px] p-[20px]">
+            <h4 class="text-[30px] font-bold" id ="city">Patan <mark>NP</mark> </h4>
+            <h1 class="text-[40px] font-bold py-[10px]" id="temp">10.21oc</h1>
+            <img src="https://openweathermap.org/img/w/02n.png" alt="">
+            <p class="text-[20px]">Clouds</p>
+        </div>
+    </div>
+</body>
+<script>
+    let form=document.querySelector("form");
+    form.addEventListener("submit",(event)=>{
+        //
+        let cityName=event.target.cityName.value;
+        console.log(cityName)
+        let apiUrl=`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=4d8fb5b93d4af21d66a2948710284366&units=metric`;
+
+        console.log(apiUrl)
+        fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+           
+            document.getElementById("city").innerHTML = cityName;
+            document.getElementById("temp").innerHTML = data.main.temp;
+          //  console.log("=====>>>>",data.main.temp)
+        
+        })
+        .catch(error => {
+            console.error('Error fetching weather data:', error);
+        });
+
+        event.preventDefault();
+    })
+</script>
+</html>

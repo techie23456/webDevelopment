@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery Accordian</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js">
+        </script>
+        <style>
+            *{
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+            }
+            .container{
+                width: 500px;
+                height:500px;
+                background: grey;
+            }
+            h2{
+                text-align: center;
+                width:500px;
+                background: blue;
+            }
+            #header1, #header2, #header3, #header4{  
+               
+                width:500px;
+                background: yellowgreen;
+                border:1px solid blue
+            }
+            #para1,#para2, #para3,#para4{
+               display: none;
+                width:500px;
+                background: palevioletred ;
+                border: 2px solid black;
+
+            }
+        </style>
+</head>
+<body>
+    <div class="container">
+        <h2 id="header1">How can I pay for my appointment?</h5>
+        <p id ="para1">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio suscipit deleniti assumenda rerum saepe nobis et ab laborum recusandae facilis magni laudantium, cupiditate corrupti fuga. Provident expedita rem tenetur voluptas natus quos, quibusdam incidunt delectus laborum architecto ipsum deserunt esse.
+        </p>
+        <h2 id="header2">What are your opening hours?</h2>
+        <p id ="para2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio suscipit deleniti assumenda rerum saepe nobis et ab laborum recusandae facilis magni laudantium, cupiditate corrupti fuga. Provident expedita rem tenetur voluptas natus quos, quibusdam incidunt delectus laborum architecto ipsum deserunt esse.
+        </p>
+
+        <h2 id="header3">Do I need a referral?</h2>
+        <p id ="para3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio suscipit deleniti assumenda rerum saepe nobis et ab laborum recusandae facilis magni laudantium, cupiditate corrupti fuga. Provident expedita rem tenetur voluptas natus quos, quibusdam incidunt delectus laborum architecto ipsum deserunt esse.
+        </p>
+        <h2 id="header4">What are the parking and public transport</h2>
+        <p id ="para4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio suscipit deleniti assumenda rerum saepe nobis et ab laborum recusandae facilis magni laudantium, cupiditate corrupti fuga. Provident expedita rem tenetur voluptas natus quos, quibusdam incidunt delectus laborum architecto ipsum deserunt esse.
+        </p>
+
+    </div>
+    
+</body>
+<script>
+    $('#header1').click(function()
+    {
+         $('#para1').toggle(1000,function()
+         {
+             $('#para2').hide(1000)
+             $('#para3').hide(1000)
+             $('#para4').hide(1000)
+         });
+    })
+
+    $('#header2').click(function()
+    {
+         $('#para2').toggle(1000,function()
+         {
+            $('#para1').hide(1000)
+            $('#para3').hide(1000)
+             $('#para4').hide(1000)
+         });
+    })
+
+
+    $('#header3').click(function()
+    {
+         $('#para3').toggle(1000,function()
+         {    $('#para1').hide(1000)
+              $('#para2').hide(1000)
+              $('#para4').hide(1000)
+         });
+    })
+
+    $('#header4').click(function()
+    {
+         $('#para4').toggle(1000,function()
+         {
+            $('#para1').hide(1000)
+            $('#para2').hide(1000)
+              $('#para3').hide(1000)
+         });
+    })
+</script>
+</html>
