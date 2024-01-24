@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dataset</title>
+    <style>
+        .container{
+            width:610px;
+            height: 200px;
+            background-color: gray;
+            padding: 20px;
+        }
+        #image1{
+            padding-left: 100px;
+         }             
+        
+    </style>
+</head>
+<body>
+<div class="div"><h2>Image Swap Demo</h2></div>
+
+<div class="container">
+<img src ="2.jpg"  width = "200" height = "200" id = "image1">
+<img src ="3.jpg"  width = "200" height = "200" id = "image2">
+</div>
+</body>
+
+<script>
+  
+   const imgEl1 = document.querySelector('#image1');
+   const imgEl2 = document.querySelector('#image2');
+
+   imgEl1.onclick = function(){
+
+   imgEl1.src = "3.jpg"
+   imgEl2.src = "2.jpg"
+
+   }
+  
+    imgEl2.onclick = function(){
+
+    imgEl1.src = "2.jpg"
+    imgEl2.src = "3.jpg"        
+
+    }
+
+</script>
+</html>

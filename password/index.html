@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Hide UnHide</title>
+</head>
+<body>
+
+    Password : <input type="password" id = "show">
+    <button onclick="pwdHideUnhide()" id = "btnDisplay" >Show</button>
+
+    <script>
+
+     var pwd = document.getElementById("show")
+     var btn = document.getElementById("btnDisplay")
+
+     function pwdHideUnhide()
+     {
+       
+
+         if(pwd.id == "show")
+         {      
+           
+             pwd.type = "text";
+             pwd.id = "hide";
+             btn.innerHTML = "Hide"
+             //console.log(pwd.id);
+
+         }
+         else{
+
+            pwd.id = "show";
+            pwd.type = "password";
+            btn.innerHTML = "Show"
+           // console.log(pwd.id);
+
+         }
+        
+     }
+
+    </script>
+    
+</body>
+</html>

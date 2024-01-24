@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>countdown</title>
+    <style>
+
+          *{
+              padding: 0;
+              margin: 0;
+              box-sizing: border-box;
+              font-family: sans-serif;
+          }
+          .container{
+             
+            margin: 50px auto;
+            display: flex;
+            padding-top: 60px;
+            width:600px;
+            height: 280px;
+            background: black;
+            color: white;
+        }
+        .day{
+            /* display: block; */
+            width:150px;
+            height: 150px;
+            background: blue;
+            color: white;
+        }
+
+        .dayText{
+            width:60px;
+            height:20px;
+            /* background: black; */
+            padding: 10px;
+            padding-left: 30px;
+        }
+
+        .item{
+            position: relative;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            width:100px;
+            height: 70px;
+            background: red;
+            line-height: 70px;
+            align-items: center;
+            text-align: center;
+            color: aqua;
+            font-weight: bold;
+
+        }
+
+        .Hours{
+            /* display: flex; */
+        
+            width:150px;
+            height: 150px;
+            background: green;
+            color: white;
+        }
+
+        .Minutes{
+            /* display: flex; */
+            width:150px;
+            height: 150px;
+            background: yellowgreen;
+            color: white;
+        }
+
+        .Seconds{
+            /* display: flex; */
+            width:150px;
+            height: 150px;
+            background: tomato;
+            color: white;
+        }
+
+        span{
+            color:black;
+        }
+
+       
+    </style>
+</head>
+<body>
+   <div class="container">
+      
+    <div class="day">
+        <div class="dayText"><h3>Days</h3></div>
+        <div class="item"><span></span></div>
+
+    </div>
+    <div class="Hours">
+        <div class="dayText"><h3>Hours</h3></div>
+        <div class="item"><span></span></div>
+
+    </div>
+
+    <div class="Minutes">
+        <div class="dayText"><h3>Minutes</h3></div>
+        <div class="item"></div>
+
+    </div>
+
+    <div class="Seconds">
+        <div class="dayText"><h3>Seconds</h3></div>
+        <div class="item"></div>
+
+    </div>
+
+    </div>
+    
+</body>
+<script src ="script.js"></script>
+</html>

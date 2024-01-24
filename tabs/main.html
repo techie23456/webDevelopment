@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tab button without JS</title>
+    <style>
+
+*{
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+ }
+
+ .container{
+     position:relative;
+     top:50px;
+     left:50px;
+     width: 1000px;
+     height: 503px;
+     background: teal;
+ }
+
+#checkbox1
+{
+display: none;
+margin-left :10px;
+width: 20px;
+height: 20px;
+}
+
+#checkbox2
+{
+display: none;
+margin-left :10px;
+width: 20px;
+height: 20px;
+}
+
+#checkbox3
+{
+display: none;
+margin-left :10px;
+width: 20px;
+height: 20px;
+}
+
+#checkbox4
+{
+display: none;
+margin-left :10px;
+width: 20px;
+height: 20px;
+}
+
+#checkbox5
+{
+display: none;
+margin-left :10px;
+width: 20px;
+height: 20px;
+}
+
+#checkbox6
+{
+display: none;
+margin-left :10px;
+width: 20px;
+height: 20px;
+}
+
+#checkbox7
+{
+display: none;
+margin-left :10px;
+width: 20px;
+height: 20px;
+}
+
+#checkbox8
+{
+display: none;
+margin-left :10px;
+width: 20px;
+height: 20px;
+}
+
+#checkbox9
+{
+display: none;
+margin-left :10px;
+width: 20px;
+height: 20px;
+}
+
+#checkbox10
+{
+display: none;
+margin-left :10px;
+width: 20px;
+height: 20px;
+}
+
+
+img{
+    width:100%;
+}
+
+.box1{
+ position: absolute;
+ top: 60px;
+ left :10px;
+ background: black;
+ display: flex;
+}
+
+.box2{
+     position: absolute;
+     top: 60px;
+     left: 10px;
+     background: black;
+     display: none;
+}
+
+.box3 {
+     position: absolute;
+     top: 60px;
+     left: 10px;  
+     background: black;
+     display: none;
+}
+
+.box4 {
+     position: absolute;
+     top: 60px;
+     left: 10px;  
+     background: black;
+     display: none;
+}
+
+.box5 {
+     position: absolute;
+     top: 60px;
+     left: 10px;  
+     background: black;
+     display: none;
+}
+
+.box6 {
+     position: absolute;
+     top: 60px;
+     left: 10px;  
+     background: black;
+     display: none;
+}
+
+.box7 {
+     position: absolute;
+     top: 60px;
+     left: 10px;  
+     background: black;
+     display: none;
+}
+
+.box8 {
+     position: absolute;
+     top: 60px;
+     left: 10px;  
+     background: black;
+     display: none;
+}
+
+.box9 {
+     position: absolute;
+     top: 60px;
+     left: 10px;  
+     background: black;
+     display: none;
+}
+
+.box10 {
+     position: absolute;
+     top: 60px;
+     left: 10px;  
+     background: black;
+     display: none;
+}
+
+#checkbox1:checked + label + .box1
+{
+  background: black;
+  display: flex;
+}
+
+#checkbox1:checked + label 
+{
+  background: black;
+}
+
+#checkbox2:checked + label + .box2
+{
+  background: black;
+  display:  flex 
+}
+
+#checkbox2:checked + label
+{
+  background: black;
+}
+
+#checkbox3:checked + label + .box3
+{
+  background: black;
+  display:  flex 
+}
+
+#checkbox3:checked + label
+{
+  background: black;
+}
+
+#checkbox4:checked + label + .box4
+{
+  background: black;
+  display:  flex 
+}
+
+#checkbox4:checked + label
+{
+  background: black;
+}
+
+#checkbox5:checked + label + .box5
+{
+  background: black;
+  display:  flex 
+}
+
+#checkbox5:checked + label
+{
+  background: black;
+}
+
+#checkbox6:checked + label + .box6
+{
+  background: black;
+  display:  flex 
+}
+
+#checkbox6:checked + label
+{
+  background: black;
+}
+
+#checkbox7:checked + label + .box7
+{
+  background: black;
+  display:  flex 
+}
+
+#checkbox8:checked + label + .box8
+{
+  background: black;
+  display:  flex 
+}
+
+#checkbox8:checked + label
+{
+  background: black;
+}
+
+#checkbox9:checked + label + .box9
+{
+  background: black;
+  display:  flex 
+}
+
+#checkbox9:checked + label
+{
+  background: black;
+}
+
+#checkbox10:checked + label + .box10
+{
+  background: black;
+  display:  flex 
+}
+
+#checkbox10:checked + label
+{
+  background: black;
+}
+
+iframe{
+    position: absolute;
+    top: -44px;
+    left: 231px;
+    width: 678px;
+    height: 463px;
+}
+
+label {
+    position: relative;
+    display: block;
+    width: 229px;
+    height: 48px;
+    color: yellow;
+    text-align: center;
+    font-size: larger;
+    border: 1px solid burlywood;
+    top: 17px;
+    left: 14px;
+    padding: 0;
+    line-height: 48px;
+}
+h1{
+  display:inline;
+  background: yellow;
+}
+span{
+  background: yellow;
+  font-size: 50px;
+}
+ a{
+   text-decoration: none;
+ }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+<input type="radio" id="checkbox1" checked="checked" name ="myRadio">
+<label for ="checkbox1">Count Down till 25th Dec</label>
+
+
+<div class ="box1" >
+  
+    <iframe src="countDown.html">
+    </iframe>
+
+</div> 
+
+<!-- <input type="checkbox" id="checkbox2" > -->
+<input type="radio" id="checkbox2" name ="myRadio">
+<label for ="checkbox2">Timer</label>
+
+<div class ="box2" >
+
+    <iframe src="index4.html">
+      </iframe>
+
+</div> 
+
+<!-- <input type="checkbox" id="checkbox3" > -->
+<input type="radio" id="checkbox3" name ="myRadio">
+<label for ="checkbox3">Swap Image</label>
+
+<div class ="box3" >
+
+
+  <iframe src="imageSwap.html">
+    </iframe>
+
+</div> 
+
+<input type="radio" id="checkbox4" name ="myRadio">
+<label for ="checkbox4">Calculator</label>
+<div class ="box4" >
+
+  <iframe src="Calc.html">
+
+    </iframe>
+
+</div> 
+
+<input type="radio" id="checkbox5" name ="myRadio">
+<label for ="checkbox5">LightHouse</label>
+<div class ="box5" >
+
+  <iframe src="lightHouse.html">
+
+    </iframe>
+
+</div> 
+
+<input type="radio" id="checkbox6" name ="myRadio">
+<label for ="checkbox6">To Do List without save  </label>
+<div class ="box6" >
+
+  <iframe src="to_do_list.html">
+
+    </iframe>
+
+</div> 
+
+<input type="radio" id="checkbox7" name ="myRadio">
+<label for ="checkbox7">To Do List With Save</label>
+<div class ="box7" >
+
+  <iframe src="myToDoList.html">
+
+    </iframe>
+
+</div> 
+
+<input type="radio" id="checkbox8" name ="myRadio">
+<label for ="checkbox8">Form Validation</label>
+<div class ="box8" >
+
+  <iframe src="formValidation.html">
+
+    </iframe>
+
+</div> 
+
+<input type="radio" id="checkbox9" name ="myRadio">
+<label for ="checkbox9">FAQ Accordian</label>
+<div class ="box9" >
+
+  <iframe src="accordian.html">
+
+    </iframe>
+
+</div> 
+
+<input type="radio" id="checkbox10" name ="myRadio">
+<label for ="checkbox10"><a href="next.html">Next</a></label>
+<div class ="box10" >
+
+  <iframe src="next.html">
+
+    </iframe>
+
+</div> 
+
+
+    
+</body>
+</html>

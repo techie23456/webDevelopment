@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tapped Image</title>
+</head>
+<body>
+    <img src="1.jpg" class="display" width ="500" height = "500"><br>
+    <img src = "1.jpg" id="img1" width="100">
+    <img src = "2.jpg" id="img2" width="100">
+    <img src = "3.jpg" id="img3"  width="100">
+</body>
+<script>
+    const displayImageElm = document.querySelector('.display');
+    displayImageElm.src ="1.jpg";
+
+    const TapImageElm1 = document.querySelector('#img1');
+    const TapImageElm2 = document.querySelector('#img2');
+    const TapImageElm3 = document.querySelector('#img3');
+
+    TapImageElm1.onclick = function(){
+        displayImageElm.src = "1.jpg";
+    }
+    TapImageElm2.onclick = function(){
+        displayImageElm.src = "2.jpg";
+     };
+    TapImageElm3.onclick = function(){
+        displayImageElm.src = "3.jpg";
+    }
+
+
+</script>
+</html>

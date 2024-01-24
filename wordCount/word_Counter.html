@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .paragraphLength{
+            display:inline;
+        }
+        .wordCount{
+
+            display:inline;
+
+        }
+        #clear{
+            display:inline;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <textarea id="in" name="input" rows="4" cols="50" autofocus></textarea><br><br>
+   <button id="clear">Clear</button><br><br>
+    <textarea id="output" name="output" rows="4" cols="50"></textarea>
+    <br><br>
+     <div class="div">Pagagraph Length :
+    <div class="paragraphLength"></div>
+    </div>
+
+    <div class="div">Word Count :
+        <div class="wordCount"></div>
+    </div>
+
+</body>
+<script>
+    let input = document.querySelector("#in");
+    let output = document.querySelector("#output");
+    let saveBtn = document.querySelector("button");
+    let ClrBtn = document.querySelector("#clear");
+    let paraLength = document.querySelector(".paragraphLength");
+    let wordCount = document.querySelector(".wordCount");
+  
+   
+    saveBtn.addEventListener("click",()=>{
+
+         output.innerHTML = input.value;
+         let wordArr = ((input.value).trim()).split(' ')
+        
+         paraLength.innerHTML = (output.value).length
+       
+         if (input.value == 0)
+         wordCount.innerHTML = wordArr.length
+
+
+    });
+
+    ClrBtn.addEventListener("click",()=>{
+
+        console.log("@@@@@@@@@@@@@@@@@")
+        input.value = '';
+        output.value = '';
+    })
+
+    input.addEventListener("keyup",()=>{
+
+        output.innerHTML = input.value;
+         console.log("######");
+
+         let wordArr = ((input.value).trim()).split(' ')
+        
+        paraLength.innerHTML = (output.value).length
+      
+        wordCount.innerHTML = wordArr.length
+    })
+</script>
+</html>

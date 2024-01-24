@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashionz</title>
+    <style>
+        
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+
+        }
+
+        .header{
+            position: sticky;
+            top:0px;
+            background-color: white;
+        }
+        nav{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav img{
+            width:250px;
+        }
+
+        .nav_links{
+            flex: 1;
+            text-align: center;
+           
+        }
+
+        .nav_links ul li{
+            list-style: none;
+            display: inline-block;
+            padding-right: 15px;
+            /* border: 1px solid black; */
+        }
+
+        .nav_links ul li:hover
+        {
+            color:red;
+            cursor: pointer;
+        }
+
+        .animate__tada{
+    animation-iteration-count: infinite;
+}
+
+    .banner{
+        width:100% ;
+        height: 400px;
+        background: url(FashionImages/banner.webp);
+        background-position: center;
+        background-size: cover;
+    }
+
+    .fashionzBy{
+        display: flex;
+        width:100%;
+        height:776px;
+        background: url(FashionImages/background.webp);
+        /* background-position: center; */
+         background-size: cover;
+         /*background-color: aquamarine; */
+
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    line-height: 30px;
+    margin: 20px 0px;
+    padding-top: 20px;
+
+
+        
+    }
+
+    .leftContainer{
+        width: 70%;
+        height: 650px;
+        /* background-color: cyan; */
+
+    }
+
+    .leftBoxContainer{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        /* padding-left: 100px; */
+        height: 150px;
+        background-color: red;
+    }
+
+    .rightContainer{
+        width: 30%;
+        height: 650px;
+        background-color: green;
+
+    }
+    .leftBox1{
+        width:50%;
+        height:150px;
+        background-color: yellow;
+    }
+    .leftBox2{
+        width:50%;
+        height:150px;
+        background-color: blueviolet;
+        
+    }
+    .leftBox3{
+        width:50%;
+        height:150px;
+        background-color: gray;
+        
+    }
+    .leftBox4{
+        width:50%;
+        height:150px;
+        background-color: pink;
+    }
+     
+    .gallerySection{
+        display: flex;
+       justify-content: center;
+       align-items: center;
+        width:100%;
+        height:100px;
+        /* background-color: aquamarine; */
+        /* color: #df7f18; */
+    }
+
+    .scrollingImageContainer{
+        display: flex;
+       
+        /* flex-wrap: wrap; */
+        width: 1000px;
+        height:258px;
+        /* justify-content: space-between; */
+
+        gap: 20px;
+        /* background-color: greenyellow; */
+        cursor:none;
+      
+    }
+
+    .scrollingImageContainer a:hover{
+
+        /* transform: scale(0.8);  */
+
+        border: 4px solid red;
+       
+
+
+    }
+
+    #imageBox1{
+        /* width:80px; */
+        /* height:200px; */
+        /* background-color: red; */
+        background: url(FashionImages/1.webp);
+        background-position: center;
+        background-size: cover;
+
+    }
+
+    #imageBox1{
+        width:280px;
+        height:250px;
+        /* background-color: red; */
+        background: url(FashionImages/1.webp);
+        background-position: center;
+        background-size: cover;
+    }
+    #imageBox2{
+        width:280px;
+        height:250px;
+        /* background-color: red; */
+        background: url(FashionImages/2.webp);
+        background-position: center;
+        background-size: cover;
+
+    }
+
+    #imageBox3{
+        width:280px;
+        height:250px;
+        /* background-color: red; */
+        background: url(FashionImages/3.webp);
+        background-position: center;
+        background-size: cover;
+
+    }
+
+    #imageBox4{
+        width:280px;
+        height:250px;
+        /* background-color: red; */
+        background: url(FashionImages/4.webp);
+        background-position: center;
+        background-size: cover;
+
+    }
+
+    .whyJumeirah>img{
+      width: 200px;
+       text-align: center;
+        margin: auto;
+        display: table;
+
+    }
+
+    .whyJumeirah{
+        /* padding: 100px; */
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 20px;
+        font-family: 'poppins',sans-serif;
+        text-align: justify;
+        width:100%;
+        height: 400px;
+        /* background-color: #df7f18; */
+    }
+
+    .whyJumeirah p{
+          padding: 0px 100px;
+    }
+
+    .jumeriahCards{
+        width: 100%;
+        height: 250px;
+        display: flex; 
+        justify-content: space-around;
+        /* background-color: pink; */
+    }
+
+    .jumeriahCards img{
+        margin-top: 20px;
+        width:200px;
+        height: 200px;
+    }
+    .floorPlanHeader{
+        width: 100%;
+        height :200px;
+        /* border: 1px solid red; */
+        text-align: center;
+        line-height: 200px;
+    }
+
+    .floorPlan{
+        display: flex;
+        text-align: center;
+        justify-content: space-around;
+        width: 100%;
+        height: 400px;
+        /* background-color: gray; */
+    }
+
+    .amenetiesCards{
+        margin:30px;
+        width: 100%;
+        height: 800px;
+        display: grid;
+        grid-template-columns: repeat(6,144px);
+        grid-template-rows: 180px 180px 180px;
+        column-gap: 53px;
+        row-gap: 0px;
+        /* justify-content: space-around; */
+        /* flex-wrap: wrap; */
+         /* gap:10px;  */
+    }
+    /* .amenetiesCards img{
+        width: 100px;
+        height:100px;
+        margin-left: 30px;
+
+    } */
+
+    .amenetiesCardContent{
+        padding-top: 10px;
+        width: 180px;
+        height: 143px;
+        text-align: center;
+        background-color: pink;
+    }
+
+    .amenetiesCardContent h3{
+        padding-top: 10px;
+       
+        text-align: center;
+        color: black;
+        font-family: Tahoma;
+        font-size: 15px;
+    }
+
+    whyJumeirah p{
+        text-align-last:center;
+
+    }
+   
+    </style>
+
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body>
+    <section class="header">
+        <nav>
+            <a href =""><img src="FashionImages/logo.png"></a>
+            <div class = "nav_links">
+                <ul>
+                <li><a hfef="#">ABOUT US</a></li>
+                <li><a hfef="#">GALLERY</a></li>
+                <li><a hfef="#">WHY JVT</a></li>
+                <li><a hfef="#">FLOOR PLAN</a></li>
+                <li><a hfef="#">AMENTITES</a></li>
+                <li><a hfef="#">LOCATION MAP</a></li>
+                <li><a hfef="#">BROCHURE</a></li>
+                <li><a hfef="#">ENQUIRE NOW</a></li>
+                <li><a hfef="#" class="animate__animated  animate__tada">&#128222</a></li>
+                </ul>
+            </div>
+        </nav>
+    </section>
+
+    <div class="banner"></div>
+    <div class="fashionzBy">
+
+        <div class="leftContainer">
+              <br>
+             <h1 style="color:#df7f18">FASHIONZ BY DANUBE</h1><br>
+             <h1 style="color:#df7f18">Dubai’s First FashionTV Branded</h1> <br>
+             <h1 style="color:#df7f18">Residences</h1> <br>
+
+             <p>Dubai’s first FashionTV Branded Residences FASHIONZ - A Haute Couture lifestyle, where individuality is celebrated and fashion comes alive every day. Fall head over heels as you experience luxury living at FASHIONZ, one of the tallest towers in Jumeirah Village Triangle.Inspired by style icons, FASHIONZ is fashionably modern with a perfect blend of indoor and outdoor amenities to bring you a world of comfort, luxury, and style.</p>
+
+             <div class="leftBoxContainer">
+
+                 <div class="leftBox1"></div>
+                 <div class="leftBox2"></div>
+                 <div class="leftBox3"></div>
+                 <div class="leftBox4"></div>
+
+             </div>
+
+
+        </div>
+
+        <div class="rightContainer"></div>
+
+        <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FASHIONZ BY DANUBE<br><br>
+        Dubai’s First FashionTV Branded<br><br>
+        Residences -->
+    </div>
+
+    <div class="gallerySection">
+        <h1>Gallery</h1>
+    </div>
+    
+                     <div class="scrollingImageContainer">
+
+        
+                          <br><br>
+                        <a href="#"><div id="imageBox1"></div></a>
+                        <a href="#"><div id="imageBox2"></div></a>
+                        <a href="#"> <div id="imageBox3"></div></a>
+                        <a href="#"><div id="imageBox4"></div></a>
+                    </div>
+
+                    <div class="whyJumeirah">
+                        <img src="FashionImages/whyJumeirah.png"  alt="whyJumeirah">
+                        <p>Jumeirah Village Triangle (JVT) has emerged as one of the most ambitious projects with brilliantly developed plans. Keeping all the demographic challenges into consideration, this freehold, gated community nestles on the northern side of Dubai. The area is strategically developed between Sheikh Mohammed Bin Zayed Road and Al Khail Road, two of the major highways in the UAE, 
+                        allowing an easier commute to other central locations of the emirate.</p>
+                    </div>
+
+                    <div class="jumeriahCards">
+                        <img src="FashionImages/10.png" width="231" height= "184" alt="">
+                        <img src="FashionImages/11.png" width="231" height= "184" alt="">
+                        <img src="FashionImages/12.png" width="231" height= "184"  alt="">
+                        <img src="FashionImages/13.png" width="231" height= "184"  alt="">
+                        <img src="FashionImages/14.png" width="231" height= "184"  alt="">
+                        <img src="FashionImages/15.png" width="231" height= "184"  alt="">
+                    </div>
+                     
+                    <div class="floorPlanHeader">
+                        <h1>Floor Plan</h1>
+                    </div>
+                    <div class="floorPlan">
+                      
+                        <img src="FashionImages/floorPlan1.jpeg" width="300" height= "260" alt="">
+                        <img src="FashionImages/floorPlan2.jpeg" width="300" height= "260" alt="">
+                        <img src="FashionImages/floorPlan3.jpeg" width="300" height= "260"  alt="">
+                        <img src="FashionImages/floorPlan4.jpeg" width="300" height= "260"  alt="">
+
+                    </div>
+
+                    <div class="ameneties">
+                        <h1>Ameneties</h1>
+                        <div class="outdoor_indooor_shaded_area">
+                          <div class="line"></div>
+                          <div class="amenetiesCards">
+                              <div class="amenetiesCardContent">
+                                <img src="FashionImages/amc1.png" width="70" height= "70" alt="">
+                                <h3>Kids Pool</h3>
+                              </div>
+                              <div class="amenetiesCardContent">
+                                <img src="FashionImages/amc2.png" width="70" height= "70" alt="">
+                                <h3>Kids Pool</h3>
+                              </div>
+                              <div class="amenetiesCardContent">
+                                <img src="FashionImages/amc3.png" width="70" height= "70" alt="">
+                                <h3>Kids Pool</h3>
+                              </div>
+                              <div class="amenetiesCardContent">
+                                <img src="FashionImages/amc4.png" width="70" height= "70" alt="">
+                                <h3>Kids Pool</h3>
+                              </div>
+                              <div class="amenetiesCardContent">
+                                <img src="FashionImages/amc5.png" width="70" height= "70" alt="">
+                                <h3>Kids Pool</h3>
+                              </div>
+                              <div class="amenetiesCardContent">
+                                <img src="FashionImages/amc6.png" width="70" height= "70" alt="">
+                                <h3>Kids Pool</h3>
+                              </div>
+                              <div class="amenetiesCardContent">
+                                <img src="FashionImages/amc7.png" width="70" height= "70" alt="">
+                                <h3>Kids Pool</h3>
+                              </div>
+                              <div class="amenetiesCardContent">
+                                <img src="FashionImages/amc8.png" width="70" height= "70" alt="">
+                                <h3>Kids Pool</h3>
+                              </div>
+                              <div class="amenetiesCardContent">
+                                <img src="FashionImages/amc9.png" width="70" height= "70" alt="">
+                                <h3>Kids Pool</h3>
+                              </div>
+
+                              <div class="amenetiesCardContent">
+                                <img src="FashionImages/amc10.png" width="70" height= "70" alt="">
+                                <h3>Kids Pool</h3>
+                              </div>
+                              <div class="amenetiesCardContent">
+                                <img src="FashionImages/amc11.png" width="70" height= "70" alt="">
+                                <h3>Kids Pool</h3>
+                              </div>
+                              <div class="amenetiesCardContent">
+                                <img src="FashionImages/amc13.png" width="70" height= "70" alt="">
+                                <h3>Kids Pool</h3>
+                              </div>
+                              <div class="amenetiesCardContent">
+                                <img src="FashionImages/amc14.png" width="70" height= "70" alt="">
+                                <h3>Kids Pool</h3>
+                              </div>
+                              <div class="amenetiesCardContent">
+                                <img src="FashionImages/amc15.png" width="70" height= "70" alt="">
+                                <h3>Kids Pool</h3>
+                              </div>
+                              <div class="amenetiesCardContent">
+                                <img src="FashionImages/amc16.png" width="70" height= "70" alt="">
+                                <h3>Kids Pool</h3>
+                              </div>
+                              <div class="amenetiesCardContent">
+                                <img src="FashionImages/amc17.png" width="70" height= "70" alt="">
+                                <h3>Kids Pool</h3>
+                              </div>
+                              <div class="amenetiesCardContent">
+                                <img src="FashionImages/amc18.png" width="70" height= "70" alt="">
+                                <h3>Kids Pool</h3>
+                              </div>
+                              <div class="amenetiesCardContent">
+                                <img src="FashionImages/amc18.png" width="70" height= "70" alt="">
+                                <h3>Kids Pool</h3>
+                              </div>
+
+                            <!-- 
+                           
+                            <img src="images/amc3.png" width="100" height= "100"  alt="">
+                            <img src="images/amc4.png" width="100" height= "100"  alt="">
+                            <img src="images/amc5.png" width="100" height= "100"  alt="">
+                            <img src="images/amc6.png" width="100" height= "100"  alt="">
+
+                            <img src="images/amc1.png" width="100" height= "100" alt="">
+                            <img src="images/amc2.png" width="100" height= "100" alt="">
+                            <img src="images/amc3.png" width="100" height= "100"  alt="">
+                            <img src="images/amc4.png" width="100" height= "100"  alt="">
+                            <img src="images/amc5.png" width="100" height= "100"  alt="">
+                            <img src="images/amc6.png" width="100" height= "100"  alt="">
+
+                            <img src="images/amc1.png" width="100" height= "100" alt="">
+                            <img src="images/amc2.png" width="100" height= "100" alt="">
+                            <img src="images/amc3.png" width="100" height= "100"  alt="">
+                            <img src="images/amc4.png" width="100" height= "100"  alt="">
+                            <img src="images/amc5.png" width="100" height= "100"  alt="">
+                            <img src="images/amc6.png" width="100" height= "100"  alt=""> -->
+      
+      
+
+
+                          </div>
+
+                        </div>
+                    </div>
+   
+   
+</body>
+</html>

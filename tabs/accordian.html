@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px; 
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body{
+            background-color: gray;
+        }
+
+        .accordion{
+            margin: 60px auto;
+            width: 600px;
+        }
+
+        .accordion li {
+            list-style: none;
+            width: 100%;
+            margin: 20px;
+            padding: 10px;
+            border-radius: 8px;
+            background: greenyellow;
+        }
+        .accordion li label{
+
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            font-size: 18px;
+            font-weight: 500;
+            cursor: pointer;
+
+        }
+
+        label::before{
+            content: '+';
+            margin-right: 10px;
+            font-size: 24px;
+            font-size: 600;
+        }
+
+        input[type="radio"]{
+            display:none;
+        }
+
+        .accordion .content{
+            color:#555;
+            padding: 0 10px;
+            line-height: 26px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s, padding 0.5s;
+        }
+
+        .accordion input[type="radio"]:checked + label + .content{
+            max-height: 400px;
+            padding: 10px 10px 20px;
+        }
+
+        .accordion input[type="radio"]:checked + label ::before{
+
+            content : "-";
+        }
+
+        
+
+    </style>
+</head>
+<body>
+    <ul class="accordion">
+        <li>
+        <input type="radio" name="accordion" id ="first" checked>
+        <label for ="first">Vison</label>
+        <div class ="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi cupiditate tempora magni repudiandae consequuntur iusto pariatur dolor incidunt recusandae architecto labore inventore corrupti vel, veritatis doloremque nesciunt adipisci illum .</div>
+        </li>
+
+        <li>
+            <input type="radio" name="accordion" id ="second">
+            <label for ="second">Mission</label>
+            <div class ="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi cupiditate tempora magni repudiandae consequuntur iusto pariatur dolor incidunt recusandae architecto labore inventore corrupti vel, veritatis doloremque nesciunt adipisci illum d.</div>
+            </li>
+
+            <li>
+                <input type="radio" name="accordion" id ="third">
+                <label for ="third">Goal</label>
+                <div class ="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi cupiditate tempora magni repudiandae consequuntur iusto pariatur dolor incidunt luptas blanditiis rem. Quaerat repellendus, autem sint culpa mollitia libero id voluptas doloribus sunt.</div>
+                </li>
+    </ul>
+    
+</body>
+</html> 

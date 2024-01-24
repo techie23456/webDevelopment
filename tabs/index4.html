@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>countdown</title>
+    <style>
+
+          *{
+              padding: 0;
+              margin: 0;
+              box-sizing: border-box;
+              font-family: sans-serif;
+          }
+          .container{
+             
+            margin: 50px auto;
+            display: flex;
+            padding-top: 60px;
+            width:678px;
+            height: 280px;
+            background: white;
+            color: black;
+        }
+
+       
+
+        .startBtn{
+                    position: absolute;
+                    padding: 10px;
+                    width: 200px;
+                    border: 10px solid blue;
+                    top: 267px;
+                    left: 47%;
+                    text-align: center;
+                    transform: translate(-50%);
+                    background: teal;
+                }
+      
+
+      
+
+        .item{
+            position: relative;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            width:100px;
+            height: 70px;
+            background: red;
+            line-height: 70px;
+            align-items: center;
+            text-align: center;
+            color: aqua;
+            font-weight: bold;
+
+        }
+
+        .Hours{
+            /* display: flex; */
+            width: 150px;
+            height: 150px;
+            background: black;
+            color: black;
+            position: relative;
+            left: 75px;
+        }
+
+        .Minutes{
+            /* display: flex; */
+            width: 150px;
+            height: 150px;
+            background: black;
+            color: black;
+            position: relative;
+            left: 79px;
+        }
+
+        .Seconds{
+            /* display: flex; */
+            width: 150px;
+            height: 150px;
+            background: black;
+            color: black;
+            position: relative;
+            left: 84px;
+}
+
+        span{
+            color:black;
+        }
+        h3{
+            color:#E7B10A;
+        }
+       
+    </style>
+</head>
+<body>
+   <div class="container">
+      
+   
+    <div class="Hours">
+        <div class="dayText"><h3>Hours</h3></div>
+        <div class="item"><span></span></div>
+
+    </div>
+
+    <div class="Minutes">
+        <div class="dayText"><h3>Minutes</h3></div>
+        <div class="item"></div>
+
+    </div>
+
+    <div class="Seconds">
+        <div class="dayText"><h3>Seconds</h3></div>
+        <div class="item"></div>
+
+    </div>
+
+    <div class="startBtn"><h2>Stop</h2></div>
+
+    </div>
+     
+
+       
+       
+
+     
+   
+    
+</body>
+<script src ="script4.js"></script>
+</html>

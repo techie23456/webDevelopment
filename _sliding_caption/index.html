@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            font-family: sans-serif;
+
+        }
+
+        .main{
+          
+            width:500px;
+            display : flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 50px auto;
+        }
+
+        .box {
+         
+            padding-top: 40px;
+            width: 200px;
+            height: 200px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .content{
+
+            /* Top to Bottom Cover */
+
+            margin-top: 40px;
+            width: 200px;
+            position: absolute;
+            top:0;
+            left: 0;
+            right:0;
+            height:0;
+            color: #fff;
+            background-color: rgba(0,0,0,0.5);
+            overflow: hidden;
+            transition: all 0.5s;
+        }
+
+        .content1{
+           
+             /* Bottom to Top cover */
+
+            width: 200px;
+            height: 0;
+            color: #fff;
+            background-color: rgba(0,0,0,0.5);
+            position: absolute;
+            bottom:0;
+            left: 0;
+            right:0;
+            transition: all 0.5s;
+        }
+
+        .content2{
+
+             /* Left to Right cover*/
+
+            width: 200px;
+            height: 200px;
+            color: #fff;
+            background-color: rgba(0,0,0,0.5);
+            position: absolute;
+            margin-top: 40px;
+            top:0;
+            left:-100%;
+         
+            transition: all 0.5s;
+        }
+
+        .content3{
+
+            /* Right to Left cover*/
+
+            width: 100%;
+            height: 100%;
+            color: #fff;
+            background-color: rgba(0,0,0,0.5);
+            position: absolute;
+            margin-top:40px;
+            top: 0;
+            right: -100%;
+           
+            transition: all 0.5s;
+        }
+
+        .box:hover .content{
+           
+            height: 100%;
+           
+        }
+
+        .box:hover .content1{
+            height: 80%;
+        }
+
+        .box:hover .content2{
+             height :100%;
+             left: 0;
+           
+        }
+
+        .box:hover .content3{
+            height :100%;
+            right : 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main">
+        <h2>Sliding Caption Over Image On Hover </h2>
+            <div class="box">
+                <img src="images/5.jpg"  width="100%" height="100%"  alt="">
+                <div class="content">Top Cover</div>  
+            </div>
+
+            <div class="box">
+                <img src="images/3.jpg"  width="100%" height="100%"  alt="">
+                <div class="content1">Bottom Cover</div>  
+            </div>
+
+            <div class="box">
+                <img src="images/6.jpg"  width="100%" height="100%"  alt="">
+                <div class="content2">Left Cover </div>  
+            </div>
+
+            <div class="box">
+                <img src="images/9.jpeg"  width="100%" height="100%"  alt="">
+                <div class="content3">Right Cover </div>
+            </div>
+    </div>
+     
+</body>
+</html>

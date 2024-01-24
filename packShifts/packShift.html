@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PackShift</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            width:100%;
+            background-color: white;
+
+        }
+
+        .main{
+            position: sticky;
+            top:0px;
+            background-color: white;
+            margin: auto;
+            width: 100%;
+            height: 100px;
+        }
+
+        .nav{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            vertical-align: center;
+            width:100%;
+            height:100px;
+            background-color: white;
+            /* z-index: 9999; */
+        }
+        .logo{
+            margin-left: 40px;
+            width:220px;
+            height: 80px;
+            background: url(PackImages/logo.png) no-repeat;
+        }
+
+        .mobileNumber{
+           
+            margin-right: 60px;
+            width:230px;
+            height: 50px;
+            line-height: 50px;
+            background-color: #035fae;
+            text-align: center;
+            border-top-left-radius: 25px;
+            border-bottom-left-radius: 25px;
+            border-top-right-radius: 25px;
+            color: white;
+
+            animation: mobileNumberDispalyAnimation 0.5s infinite;
+
+        }
+
+        /* mobile number flash animation */
+        @keyframes mobileNumberDispalyAnimation{
+            0%{
+                background-color: #035fae;
+            }
+
+            100%{
+                    background-color: #ffcf40;
+            }
+        }
+
+        .banner{
+         display: flex; 
+          
+           justify-content: space-around;
+           width:100%;
+           height:720px;
+           background-size: cover;
+           background-position: center;
+           background: url(PackImages/background.jpeg) top center no-repeat ;
+        }
+
+        .bannerTextContainer{
+         
+           top: 100px;
+           left: 20px;
+            width:746px;
+            height: 380px;
+            /* background-color: #ffcf40; */
+            background-color: transparent;
+        
+        }
+        .bannerHeadingText1{
+            /* position: relative; */
+            margin-top:200px;
+            margin-left: 40px;
+            width:740px;
+            height: 60px;
+            /* background-color: gray; */
+            background-color: transparent;
+            color: white;
+            /* border: 4px solid red; */
+
+        }
+
+        .bannerHeadingText2{
+            /* position: relative; */
+            margin-top:65px;
+            margin-left: 40px;
+            width:740px;
+            height: 60px;
+            /* background-color: gray; */
+            background-color: transparent;
+            color: white;
+            /* border: 4px solid transparent; */
+
+        }
+
+        .bannerHeadingText3{
+            /* position: relative; */
+            margin-top:20px;
+            margin-left: 40px;
+            width:740px;
+            height: 50px;
+            /* background-color: gray; */
+            background-color: transparent;
+            color: white;
+            /* border: 4px solid red; */
+
+        }
+
+        .certificate_Image_container{
+            padding-left: 50px;
+            display: flex;
+            width:320px;
+            height:320px ;
+            background-color: transparent;
+            
+        }
+  
+        .quoteContainer{
+            /* display: flex; */
+           
+            margin-top: 40px;
+            width:350px;
+            height:500px;
+           /* background-color: #f4f4f4; */
+           background-color: rgb(240, 240, 240);
+           border-radius: 25px;
+           overflow: hidden;
+
+        }
+        .quoteHeading{
+            font-weight: 900;
+            padding-top: 20px;
+            border-radius: 25px;
+            text-align: center;
+            width: 350px ;
+            height: 40px;
+            /* background-color: pink; */
+        }
+
+        .captchaContainer{
+            display: flex;
+            width:320px;
+            height:30px ;
+            /* border: 1px solid gray; */
+            justify-content: space-between;
+            margin-left: 15px;
+
+        }
+
+        /* captchaContainer ::input-placeholder {  
+  font-style: italic;
+  font-size: 1em;
+  color: mintcream;
+  background: thistle;
+  padding: 5px;
+} */
+
+        .CaptchaBox{
+            
+            
+            width: 150px;
+            height: 30px; 
+            margin-left: 15px;
+            background-color:red;
+            border:1px solid black;
+            padding-left:10px;
+          
+        }
+
+        .captchaText{
+            width:150px;
+            height:30px;
+            text-align: center;
+            line-height: 30px;
+            background-color: #ffcf40;
+
+        }
+
+        /* input {
+  border: 1px solid red;
+ 
+} */
+
+
+      
+
+       
+        .truck{
+            position:fixed;
+            bottom:14px;
+            left:0%;
+            width:108px;
+            height: 40px;
+            /* z-index: 9999; */
+            
+            transition: 5s; 
+            animation-name: truckMove;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            margin-top: -30px;
+            /* background-color: red; */
+              
+        }
+        .wheels{
+
+            display:flex;
+            justify-content: space-around;
+            margin-top: -5px;
+
+        }
+
+        @keyframes truckMove{
+            0%{
+                transform: translateX(-20%);
+            }
+            100%{
+                transform: translateX(1200px);
+            }
+        }
+
+        .packingVideosSectionHeader{
+        position: relative;
+            display: flex;
+            justify-content: space-around;
+           
+            line-height: 120px;
+            text-align: center;
+            width:100%;
+            height:120px;
+            /* border: 1px solid tomato; */
+        }
+
+        .packagingVideosSection{
+            display: flex;
+            margin-left: 20px;
+            width: 100%;
+            height:900px;
+             background-color: transparent;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            
+        }
+
+        .IframeStyling{
+
+            /* position:absolute;
+            left:200px; */
+            width:335px;
+            height: 200px;
+            border-radius: 10px;
+            background-color: white;
+        }
+
+        .ourServicesSectionHeader{
+            /* display: flex; */
+            /* justify-content: space-around; */
+            line-height: 120px;
+            text-align: center;
+            width:100%;
+            height:100px;
+            background-color: #F4F4F4;
+            /* border: 1px solid tomato; */
+        }
+
+        .our_core_text_color{
+            color: #035fae;
+        }
+
+        .ServiceColor{
+            color: #ffcf40;
+        }
+
+        .coreServicesContainer
+        {   
+            display: flex;
+            /* padding-left: 20px; */
+            /* width: 1140px; */
+            width: 100%;
+            height:1350px;
+            /* border: 3px solid black; */
+            /* margin: auto; */
+            flex-wrap: wrap;
+            background-color: #F4F4F4;
+             justify-content: space-around;
+         
+
+        }
+
+        .servicesCard1{
+            /* display: inline-block; */
+            width: 540px;
+            height:620px;
+            background-color: white;
+            margin: 10px;
+            border-top-left-radius: 25px;
+            border-top-right-radius: 25px;
+            overflow: hidden;
+            border-bottom-left-radius: 25px;
+            border-bottom-right-radius: 25px;
+        }
+        .serviceCard1Text{
+            margin-top: 5px;
+            padding: 15px;
+            text-align: center;
+            font-size: 18px;
+            width:540px;
+            height:250px;
+            color:#6e737d;
+            background-color: white;
+        }
+
+        .servicesCard2{
+            width: 540px;
+            height:620px;
+            background-color: #035fae;
+            margin: 10px;
+            border-top-left-radius: 25px;
+            border-top-right-radius: 25px;
+            overflow: hidden;
+            border-bottom-left-radius: 25px;
+            border-bottom-right-radius: 25px;
+        }
+
+        .serviceCard2Text{
+            margin-top: 5px;
+            padding: 15px;
+            text-align: center;
+            font-size: 18px;
+            width:540px;
+            height:250px;
+            color:#6e737d;
+            background-color: white;
+        }
+
+        .whyPackSectionHeader{
+          
+           
+            text-align: center;
+            width:100%;
+            height:590px;
+            background-color:white;
+            border: 1px solid tomato;
+        }
+
+        .whypackShiftCardContainer{
+
+            display: flex;
+            /* padding-left: 20px; */
+            /* width: 1140px; */
+            width: 100%;
+            height:400px;
+            /* border: 3px solid black; */
+            /* margin: auto; */
+            flex-wrap: wrap;
+            background-color: white;
+             justify-content: space-around;
+
+        }
+
+        .whyPackShiftCard1{
+
+            width: 250px;
+            height:150px;
+            background-color: #f4f4f4;
+            margin: 10px;
+            border-top-left-radius: 25px;
+            border-top-right-radius: 25px;
+            overflow: hidden;
+            border-bottom-left-radius: 25px;
+            border-bottom-right-radius: 25px;
+
+        }
+
+        .whyPackshiftImageBox{
+            /* margin-top: 20px; */
+            width: 80px;
+            height: 80px;
+            margin: 8px auto ;
+            background-color: transparent;
+
+        }
+
+        .whyPackshiftTextBox{
+            /* position:relative; */
+            /* bottom: 20px; */
+            padding-bottom: 10px;
+            width: 250px;
+            height:100px;
+            background-color: #f4f4f4;
+            color:white;
+            text-align: center;
+
+        }
+
+        .whypackShiftCardContainer >.whyPackShiftCard1 h4{
+           padding-top: 5px;
+            color:black;
+        }
+
+        .ourAchievementSectionHeader{
+            text-align: center;
+            width:100%;
+            height:360px;
+            background-color:#035fae;
+            border: 1px solid tomato;
+        }
+
+        .happyCustomerSection{
+            padding-top:40px;
+            text-align: center;
+            width:100%;
+            height:400px;
+            /* background-color: pink; */
+           
+        }
+
+        .ourClientSection{
+
+            margin-top: 40px;
+            text-align: center;
+            width:100%;
+            height:200px;
+            background-color: greenyellow;
+
+           
+
+
+        }
+
+        .ourBranches{
+
+            text-align: center;
+            width:100%;
+            height:300px;
+            /* background-color: tomato; */
+        }
+        
+        .packShiftMoversAndShakers{
+
+            width: 100%;
+            height:900px;
+            background-color: #f4f4f4;
+            text-align: center;
+
+        }
+
+        .ourAchievementCardsContainer{
+            display: flex;
+            align-items: center;
+            width:100%;
+            height:200px;
+            /* border: 2px solid red; */
+             background-color: #035fae;
+        }
+        .achievementCard{
+            padding-top: 40px;
+            width:150px;
+            height:150px;
+            /* border: 2px solid red; */
+            margin: auto;
+
+        }
+
+        .footer{
+            display: flex;
+            width: 100%;
+            height:100px;
+            background-color: #035fae;
+            justify-content: space-between;
+            overflow: hidden;
+            /* border: 2px solid black; */
+        }
+
+        .facebook_youTube_box{
+            display: flex;
+            width:100px;
+            height:30px;
+            /* background-color: #6e737d; */
+
+        }
+    
+        .facebookBox{
+            margin-top: 0px;
+            width:30px;
+            height:30px;
+            /* background-color: pink; */
+
+        }
+
+        .youtubeBox{
+            margin-left: 10px;
+            width:35px;
+            height:30px;
+            /* background-color: greenyellow; */
+
+        }
+        .terms_condition_box{
+          
+            width:150px;
+            height:35px;
+            /* background-color: aqua; */
+            color: white;
+           
+        }
+
+        .facebook_youTube_TandC_box{
+            padding-top: 10px;
+            margin: auto;
+            width:1000px;
+            height: 50px;
+            display: flex;
+            background-color: #035fae;
+            justify-content: space-between;
+            border-bottom: 2px solid white;
+        }
+
+        .copyRight{
+            /* margin: auto; */
+            /* margin-top: 10px; */
+            padding-top: 20px;
+            width:100%;
+            height: 40px;
+            background-color: #035fae;
+            /* background-color: red; */
+            text-align: center;
+            color:white;
+            /* border: 2px solid black; */
+           
+
+        }
+
+        a{
+            text-decoration: none;
+            color: white;
+        }
+
+        .customerBox{
+            /* position:relative; */
+            width: 60%;
+            height: 300px;
+            background-color: green;
+            margin: 20px auto;
+            margin-bottom: 40px;
+            border-top-left-radius: 25px;
+            border-top-right-radius: 25px;
+            border-bottom-left-radius: 25px;
+            border-bottom-right-radius: 25px;
+
+        }
+
+        .profileImageBox{
+            position:relative;
+            top:-297px;
+            left:170px;
+            width:144px;
+            height:200px;
+            background-color: yellow;
+        }
+     
+
+    </style>
+</head>
+<body>
+    <div class="main">
+      
+            <div class="nav">
+                     <div class="logo"></div>
+                            <div class="mobileNumber">
+                                <h1><a href="#">8287 244 244</a></h1>
+                            </div>
+            </div> 
+
+         
+      
+    </div>    
+    <div class="banner">
+ 
+       
+        <div class="bannerTextContainer">
+
+            <div class="bannerHeadingText1"><h1>PACKSHIFTS - INDIA'S BEST PACKERS AND MOVERS</h1>
+            </div>
+
+            <div class="bannerHeadingText2"><h1>CALL US NOW FOR A HASSLE-FREE SHIFTING.</h1>
+            </div>
+
+            <div class="bannerHeadingText3"><h3>We Assure Safety And Time Delivery Of Items.</h3></div>
+            
+            <div class="certificate_Image_container">
+                <img src="PackImages/cert1.png" alt="certificate1" width="150" height="150">
+                <img src="PackImages/cert2.png" alt="certificate1" width="150" height="150">
+            </div>
+
+
+        </div>
+       
+        <div class="quoteContainer">
+            <div class="quoteHeading"><h3>GET A FREE MOVING QUOTE</h3></div><br>
+            <form>
+                <input type="text" placeholder="Name*" style="width: 320px;height: 30px; margin-left: 15px; padding-left: 10px;"><br><br>
+
+                <input type="text" placeholder="Mobile Number*" style="width: 320px;height: 30px; margin-left: 15px; padding-left: 10px;"><br><br>
+
+                <input type="text" placeholder="Email ID*" style="width: 320px;height: 30px; margin-left: 15px; padding-left: 10px;"><br><br>
+
+                <input type="text" placeholder="Location City From*" style="width: 320px;height: 30px; margin-left: 15px; padding-left: 10px;"><br><br>
+
+                <input type="text" placeholder="Location City To*" style="width: 320px;height: 30px; margin-left: 15px; padding-left: 10px;"><br><br>
+
+                <div class="captchaContainer">
+                    
+                     <input type="text" placeholder="  Captcha*"> 
+
+                    <div class="captchaText">08126</div>
+
+                </div>
+            
+                <p><h5 style="margin-left: 15px; font-weight: 100;padding-top: 20px;">By clicking the button below, you agree to receive communications from Packshifts about relocation <span style="color:#035fae">Privacy Policy</span></h5></form><p><br>
+
+                <input type="button" value="SUBMIT" style="width: 300px; height: 30px; color: white;margin-left: 20px; background-color: #035fae;">
+ 
+                   
+
+            </form>
+            
+        </div>
+
+    </div>
+   
+   
+
+   
+    <div class="packingVideosSectionHeader">
+       
+       <h1> <span><img src ="PackImages/1.png" width="19" height="26" ></span>
+        Packing Videos</h1>
+    </div>
+
+    <div class="packagingVideosSection">
+
+        <div class="IframeStyling">
+            <iframe class="IframeStyling"
+             src="https://www.youtube.com/embed/pyzJTtcb_UA?si=jlBttbq0YpYf9Ff2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+            <h1 style="color:#035fae;
+            font-size: 20px;
+            font-weight: 900;
+            text-align: center;
+            padding-top: 10px;">Bike Packing Video</h1>
+        </div>
+
+        <div class="IframeStyling">
+            <iframe class="IframeStyling"
+            src="https://www.youtube.com/embed/J4RbIkAQOEo?controls=0"></iframe>
+
+            <h1 style="color:#035fae;
+            font-size: 20px;
+            font-weight: 900;
+            text-align: center;
+            padding-top: 10px;">Scooty Packing Video</h1>
+        </div>
+
+        <div class="IframeStyling">
+            <iframe class="IframeStyling"
+            src="https://www.youtube.com/embed/QwEyVG_4i7M?controls=0"></iframe>
+
+            <h1 style="color:#035fae;
+            font-size: 20px;
+            font-weight: 900;
+            text-align: center;
+            padding-top: 10px;">Fridge Packing Video</h1>
+        </div>
+
+        <div class="IframeStyling">
+            <iframe class="IframeStyling"
+            src="https://www.youtube.com/embed/uwJBLcu70z0?controls=0"></iframe>
+
+            <h1 style="color:#035fae;
+            font-size: 20px;
+            font-weight: 900;
+            text-align: center;
+            padding-top: 10px;">Washing Machine Packing Video</h1>
+        </div>
+
+        <div class="IframeStyling">
+            <iframe class="IframeStyling"
+            src="https://www.youtube.com/embed/v_M2ikG408k?controls=0"></iframe>
+
+            <h1 style="color:#035fae;
+            font-size: 20px;
+            font-weight: 900;
+            text-align: center;
+            padding-top: 10px;">Crockery Packing Video</h1>
+        </div>
+
+        <div class="IframeStyling">
+            <iframe class="IframeStyling"
+            src="https://www.youtube.com/embed/asE9hoAX9x8?controls=0"></iframe>
+
+            <h1 style="color:#035fae;
+            font-size: 20px;
+            font-weight: 900;
+            text-align: center;
+            padding-top: 10px;">Cloths Packing Video</h1>
+        </div>
+   
+        <div class="IframeStyling">
+            <iframe class="IframeStyling"
+            src="https://www.youtube.com/embed/xmo3jBgD_dU?controls=0"></iframe>
+
+            <h1 style="color:#035fae;
+            font-size: 20px;
+            font-weight: 900;
+            text-align: center;
+            padding-top: 10px;">Showpiece Packing Video</h1>
+        </div>
+
+        <div class="IframeStyling">
+            <iframe class="IframeStyling"
+            src="https://www.youtube.com/embed/y-T0Q1sya3o?controls=0"></iframe>
+
+            <h1 style="color:#035fae;
+            font-size: 20px;
+            font-weight: 900;
+            text-align: center;
+            padding-top: 10px;">Matress Packing Video</h1>
+        </div>
+
+        <div class="IframeStyling">
+            <iframe class="IframeStyling"
+            src="https://www.youtube.com/embed/vBX4i3pUaCI?controls=0"></iframe>
+
+            <h1 style="color:#035fae;
+            font-size: 20px;
+            font-weight: 900;
+            text-align: center;
+            padding-top: 10px;">Sofa Packing Video</h1>
+        </div>
+    </div>
+
+    <div class="ourServicesSectionHeader">
+        <h1> <span class="our_core_text_color"><img src ="PackImages/1.png" width="19" height="26" >
+            OUR CORE </span><span class="ServiceColor">SERVICES</span></h1>
+    </div>
+
+     <div class="coreServicesContainer">
+                <div class="servicesCard1"> 
+                    <img src="PackImages/services1.jpeg" width="540" height="340" alt="">
+                
+                        <div class="serviceCard1Text">
+                            <span class="our_core_text_color"><h3>HOUSE SHIFTING</h3></span><br>
+                            <p style="text-align:justify;">We Are One Of The Most Trusted Packers And Movers Across Gujarat. We Are Happy To Answer All Of Your Questions With No Obligations. Packshifts Packers & Movers Offers Highly Reliable And Swift Goods Packing Services Which Are Carried Out By Trained Professionals. Packshifts Offers Custom Designed Packaging Material For Packing And The Safe Transportation Of Goods.</p>
+                        </div>
+                  
+                </div>
+                <div class="servicesCard2">
+                    <img src="PackImages/services2.jpeg" width="540" height="340" alt="">
+                    <div class="serviceCard2Text">
+                        <span class="our_core_text_color"><h3>OFFICE SHIFTING</h3></span><br>
+                        <p style="text-align:justify;">With The Best Technology Available, The Rise In Number Of Offices Is Also Noticed. Packshifts Packer And Mover Has Noticed The Demand Of Office Moving . We Provide The Best Office Relocation Services In Gujarat . You Can Reach Packshifts Packer And Mover For Best Office Shifting Experience.</p>
+                    </div>
+                </div>
+                <!--  -->
+                <div class="servicesCard1"> 
+                    <img src="PackImages/car.jpeg" width="540" height="340" alt="">
+                
+                        <div class="serviceCard1Text">
+                            <span class="our_core_text_color"><h3>CAR SHIFTING</h3></span><br>
+                            <p style="text-align:justify;">Vehicle Moving Is One Of The Daunting Tasks. You Need The Best Vehicle Moving Company To Relocate Your Vehicle Without A Single Scratch. We Are The Most Experienced Packers And Movers For Vehicle Moving.</p>
+                        </div>
+                  
+                </div>
+                <div class="servicesCard2">
+                    <img src="PackImages/bike.jpeg" width="540" height="340" alt="">
+                    <div class="serviceCard2Text">
+                        <span class="our_core_text_color"><h3>BIKE SHIFTING</h3></span><br>
+                        <p style="text-align:justify;">Now That You Are Shifting From One City To Another, YOUR TWO-WHEELER Also Needs To Be Transported To The New City With Utmost Care. However, You Can Lighten The Load By Ensuring That You Zero In On A Professional Packers & Movers Firm That Will Provide You With High-Quality Relocation Services.</p>
+                    </div>
+                </div>
+     </div>
+  
+    </div>
+
+    <!-- why packshift -->
+    <div class="whyPackSectionHeader">
+        <br><br>
+        <h1> <span class="our_core_text_color"><img src ="PackImages/1.png" width="19" height="26" >
+            WHY </span><span class="ServiceColor">PACKSHIFTS</span></h1><br><br>
+            
+            <h3>Why Choose Packshifts Packers & Movers</h3><br><br><br>
+
+            <div class="whypackShiftCardContainer">
+
+                <div class="whyPackShiftCard1">
+                    <div class="whyPackshiftImageBox">
+                        <img src="PackImages/Experienced Staff.png" width="80" height="80" alt="">
+                    </div>
+
+                    <!-- <div class="whyPackshiftTextBox"> -->
+                        <h4>Experienced Staff</h4>
+                    <!-- </div> -->
+                </div>
+
+                <div class="whyPackShiftCard1">
+                    <div class="whyPackshiftImageBox">
+                        <img src="PackImages/Cost-Efficient.png" width="80" height="80" alt="">
+                    </div>
+
+                    <div class="whyPackshiftTextBox">
+                        <h4>Cost-Efficient</h4>
+                    </div>
+                </div>
+
+                <div class="whyPackShiftCard1">
+                    <div class="whyPackshiftImageBox">
+                         <img src="PackImages/No_Hidden Charges.png" width="80" height="80" alt="">
+                    </div>
+
+                    <div class="whyPackshiftTextBox">
+                        <h4>No Hidden Charges</h4>
+                    </div>
+                </div>
+
+                <div class="whyPackShiftCard1">
+                    <div class="whyPackshiftImageBox">
+                        <img src="PackImages/Safe_and_Time-Saving Service.png" width="80" height="80" alt="">
+                    </div>
+
+                    <div class="whyPackshiftTextBox">
+                        <h4>Safe and Time-Saving Service</h4>
+                    </div>
+                </div>
+
+                <div class="whyPackShiftCard1">
+                    <div class="whyPackshiftImageBox">
+                         <img src="PackImages/Free_ Quotation.png" width="80" height="80" alt="">
+                    </div>
+
+                    <div class="whyPackshiftTextBox">
+                        <h4>Free Quotation</h4>
+                    </div>
+                </div>
+                <div class="whyPackShiftCard1">
+                    <div class="whyPackshiftImageBox">
+                          <img src="PackImages/24×7_Support Service.png" width="80" height="80" alt="">
+                    </div>
+
+                    <div class="whyPackshiftTextBox">
+                        <h4>24×7 Support Service</h4>
+                    </div>
+                </div>
+
+                <div class="whyPackShiftCard1"> 
+                    <div class="whyPackshiftImageBox">
+                         <img src="PackImages/Customer_ Satisfaction.png" width="80" height="80" alt="">
+                    </div>
+
+                    <div class="whyPackshiftTextBox">
+                        <h4>100% Customer Satisfaction</h4>
+                    </div>
+                </div>
+
+                 <div class="whyPackShiftCard1">
+                    <div class="whyPackshiftImageBox">
+                       <img src="PackImages/Quality_Packing_Material.png" width="80" height="80" alt="">
+                     </div>
+
+                     <div class="whyPackshiftTextBox">
+                        <h4>Quality Packing Material</h4>
+                    </div>
+                </div>
+            </div>
+
+    </div>
+
+    <!-- our achievements -->
+
+    <div class="ourAchievementSectionHeader">
+        <br><br>
+
+        <h1 style="color:white;"><img src ="PackImages/2.png" width="19" height="26" >
+            OUR ACHIEVEMENTS</h1><br><br>
+            <h3 style="color:white;">Our Achievements , Which Makes Us The Most Preferable Moving Brand</h3><br>
+
+            <div class="ourAchievementCardsContainer">
+
+                <div class="achievementCard">
+                    <img src="PackImages/ach1.png" width="39" height="39" alt="">
+                    <h1 style ="color:white;">8</h1>
+                    <h3 style ="color:white; font-weight: 100;">+ Years Of Experience</h3>
+                </div>
+                <div class="achievementCard">
+                    <img src="PackImages/ach2.png" width="39" height="39" alt="">
+                    <h1 style ="color:white;">8544</h1>
+                    <h3 style ="color:white;  font-weight: 100;">Happy Customers</h3>
+                </div>
+                <div class="achievementCard">
+                    <img src="PackImages/ach3.png" width="39" height="39" alt="">
+                    <h1 style ="color:white;">821</h1>
+                    <h3 style ="color:white;  font-weight: 100;">Homes Relocated</h3>
+                </div>
+                <div class="achievementCard">
+                    <img src="PackImages/ach4.png" width="39" height="39" alt="">
+                    <h1 style ="color:white;">535</h1>
+                    <h3 style ="color:white;  font-weight: 100;">Four Wheelers Relocated</h3>
+                </div>
+
+                <div class="achievementCard">
+                    <img src="PackImages/ach5.png" width="39" height="39" alt="">
+                    <h1 style ="color:white;">535</h1>
+                    <h3 style ="color:white; font-weight: 100;">Two Wheelers Relocated</h3>
+                </div>
+
+                <div class="achievementCard">
+                    <img src="PackImages/ach6.png" width="39" height="39" alt="">
+                    <h1 style ="color:white;">535</h1>
+                    <h3 style ="color:white; font-weight: 100;">Offices Relocated</h3>
+                </div>
+            </div>
+
+    </div>
+
+    <div class="happyCustomerSection">
+        
+        <h1> <span class="our_core_text_color"><img src ="PackImages/1.png" width="19" height="26" >
+            HAPPY </span><span class="ServiceColor">CUSTOMERS</span></h1>
+
+            <div class="customerBox"></div>
+
+            <div class="profileImageBox"></div>
+
+    </div>
+
+    <div class="ourClientSection">
+        
+        <h1> <span class="our_core_text_color"><img src ="PackImages/1.png" width="19" height="26" >
+            OUR </span><span class="ServiceColor">CLIENTS</span></h1><br><br>
+    </div>
+       
+    <div class="ourBranches">
+        <br><br>
+        <h1> <span class="our_core_text_color"><img src ="PackImages/1.png" width="19" height="26" >
+            OUR </span><span class="ServiceColor">BRANCHES</span></h1><br><br>
+
+    </div>
+
+    <div class="packShiftMoversAndShakers">
+
+        <br><br>
+        <h1> <span class="our_core_text_color"><img src ="PackImages/1.png" width="19" height="26" >
+            PACKSHIFTS </span><span class="ServiceColor">PACKERS & MOVERS</span></h1><br><br>
+
+    </div>
+
+    <div class="footer">
+
+                    <div class="facebook_youTube_TandC_box">
+
+                                <div class="facebook_youTube_box">
+
+                                        <div class="facebookBox">
+                                            <img src="PackImages/facebook.png" alt="">  
+                                        </div>
+
+                                        <div class="youtubeBox">
+                                            <img src="PackImages/youtube.png" alt="">
+                                        </div>
+                                </div>
+
+                                <div class="terms_condition_box"><h4>Tearms & Condition</h4></div>
+
+                            <!-- <div class="copyRight"></div> -->
+
+                    </div>           
+    </div>
+
+    <div class="copyRight"><h5>All Rights Reserver</h5></div>
+
+<!--  -->
+    <div class="truck">
+        <img src="PackImages/truck.png" width="108"  height= "40" alt="">
+        <div class="wheels">
+            <img src="PackImages/wheel1.png"  width="14"  height= "14" alt="">
+            <img src="PackImages/wheel2.png" width="14"  height= "14" alt="">
+        </div>
+    </div>
+    
+</body>
+</html>

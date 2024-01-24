@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDoList</title>
+    <style>
+
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        body{
+            background: teal;
+        }
+        .textField{
+            width:500px;
+            height:30px;
+            margin-left: 10px;
+            margin-top: 10px;
+            padding-left: 10px;
+            background: teal;
+            font-size: larger;
+            color: white;
+            border: 2px solid white;
+        }
+
+        button{
+            width: 100px;
+            height: 30px;
+            background: gray;
+        }
+
+        ul{
+            list-style: none;
+        }
+
+        li{
+            /* display: flex; */
+             /* text-align: center;  */
+            position:relative;
+            line-height: 40px;
+            padding-left: 20px;
+            margin: 10px;
+            width:500px;
+            height:40px;
+            background: gray;
+            color: white;
+        }
+
+       li span{
+            position: absolute;
+            right:15px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <H1>&nbsp;&nbsp;&nbsp;&nbsp;----------TO DO LIST --------</H1>
+    <input type="text" value="" class="textField" name ="text" value>
+
+    <button value="submit">Save</button>
+
+    <ul>
+
+    </ul>
+
+
+    
+</body>
+<script>
+     let txtInput = document.querySelector(".textField") 
+    let uList = document.querySelector("ul")
+    let Li_elm = document.querySelector("li")
+  //  txtInput.value  = "aaaaa"
+
+//   Li_elm.remove
+
+    let saveBtn = document.querySelector("button")
+
+    let Li = '';
+    let tempLi = '';
+
+    saveBtn.addEventListener("click",(event,i)=>{
+
+        console.log("##########>>>>>>>>",Li);
+        if (txtInput.value.trim() == '')
+        {
+            alert("Please Enter an item")
+        }
+        else if (tempLi.includes(txtInput.value))
+        {
+            alert("Item already in the List")
+        }
+        else{
+
+            tempLi = tempLi + `<li> ${txtInput.value} </li>`;
+
+            Li = Li + `<li> ${txtInput.value} <span>&times</span></li>`;
+        }
+
+        uList.innerHTML = Li; 
+
+       // console.log("list items", uList.innerHTML);
+
+        txtInput.value = '';
+    } );
+
+    uList.addEventListener('click',(event,i)=>{
+        console.log("@@@@@@@",event.target.tagName);
+
+        if (event.target.tagName == "SPAN")
+        {
+            console.log("%%%%%%");
+
+            Li = ''; 
+
+            event.target.parentElement.remove();
+        }
+    })
+
+
+
+    // uList.innerHTML = "<li>bvbvb</li><li>jkjkjkj</li>"
+
+    
+
+    // console.log(txtInput.innerHTML.value  = "aaaaa")
+</script>
+</html>

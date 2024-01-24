@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tab button without JS</title>
+    <style>
+
+#checkbox1
+{
+width: 20px;
+height: 20px;
+/* display: none; */
+}
+
+#checkbox2
+{
+/*   position: absolute; */
+
+width: 20px;
+height: 20px;
+/* display: none; */
+}
+img{
+    width:100%;
+}
+
+.box1{
+  
+ position: absolute;
+ top: 35px;
+  width: 1000px;
+  height: 200px;
+  background: green;
+  display: none;
+}
+
+.box2{
+     position: absolute;
+     top: 35px;
+     left: 200px;   /* 100 */
+  width: 200px;
+  height: 200px;
+  background: green;
+  display: none;
+}
+
+.box3{
+     position: absolute;
+     top: 35px;
+     left: 400px;   /* 100 */
+  width: 200px;
+  height: 200px;
+  background: green;
+  display: none;
+}
+
+#checkbox1:checked + label + .box1
+{
+  background: red;
+  display: flex;
+}
+
+#checkbox2:checked + label + .box2
+{
+  background: green;
+  display:  flex 
+}
+
+#checkbox3:checked + label + .box3
+{
+  background: green;
+  display:  flex 
+}
+    </style>
+</head>
+<body>
+
+
+<input type="checkbox" id="checkbox1">
+<label for ="checkbox1">Image1</label>
+
+
+<div class ="box1" >
+    <!-- <img src="2.jpg" width="200" height="200"> -->
+    <iframe src ="https://www.youtube.com/embed/6b601MrVEi0?si=HH2ImFEXk9y89hQ1" width="1000" height="500" ></iframe>
+
+</div> 
+
+<input type="checkbox" id="checkbox2" >
+<label for ="checkbox2">Image2</label>
+
+<div class ="box2" >
+
+    <img src="3.jpg" width="200" height="200">
+
+</div> 
+
+<input type="checkbox" id="checkbox3" >
+<label for ="checkbox3">Image3</label>
+
+<div class ="box3" >
+
+    <img src="4.jpg" width="200" height="200">
+
+</div> 
+
+
+    
+</body>
+</html>

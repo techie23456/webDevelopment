@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDoList</title>
+    <style>
+
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body{
+            background: teal;
+        }
+        .textField{
+            width:500px;
+            height:30px;
+            margin-left: 10px;
+            margin-top: 10px;
+            padding-left: 10px;
+            background: teal;
+            font-size: larger;
+            border: 2px solid white;
+            color: white;
+        }
+
+        button{
+            width: 100px;
+            height: 30px;
+            background: gray;
+        }
+
+        ul{
+             list-style: none; 
+        }
+
+        li{
+            /* display: flex; */
+             /* text-align: center;  */
+            position:relative;
+            line-height: 40px;
+            padding-left: 20px;
+            margin: 10px;
+            width:500px;
+            height:40px;
+            background: red;
+            color: white;
+        }
+
+       li span{
+            position: absolute;
+            right:15px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <H1>&nbsp;&nbsp;&nbsp;&nbsp;----------TO DO LIST --------</H1>
+    <input type="text" value="" class="textField" name ="" value>
+
+    <button value="submit">Save</button>
+
+    <ul>
+
+    </ul>
+
+  
+
+
+    
+</body>
+<script>
+    let txtInput = document.querySelector(".textField") 
+    let uList = document.querySelector("ul")
+ 
+    let saveBtn = document.querySelector("button")
+    let Li = '';
+    let tempLi = '';
+
+    let myArr = [];
+   
+
+    saveBtn.addEventListener("click",(event)=>{
+
+        if (txtInput.value.trim() == '')
+        {
+            alert("Please Enter an item")
+        }
+        else if (myArr.includes(txtInput.value.trim()))
+        {
+            alert("Item already in the List")
+        }
+        else{
+
+            myArr.push(txtInput.value.trim())
+
+            tempLi = tempLi + `<li> ${txtInput.value} </li>`;
+
+            Li = Li + `<li> ${txtInput.value} <span>&times;</span></li>`;
+        }
+
+        uList.innerHTML = Li; 
+
+        console.log("list items", uList.innerHTML);
+
+        txtInput.value = '';
+
+        
+    } );
+
+      
+    uList.addEventListener('click',(event)=>{
+      
+        console.log("element selected ",event.target.innerHTML);
+
+        var x = document.querySelectorAll("li");
+
+             x.forEach((item)=>{
+             
+                if(event.target.innerHTML == item.innerHTML)
+                {
+                 item.style.background = "green";
+                }
+                else{
+                item.style.background = "red";
+                }
+             });
+
+    
+        if (event.target.tagName == "SPAN")
+        {
+
+            Li = ''; 
+
+            console.log("parent element ", event.target.parentElement)
+
+            event.target.parentElement.remove();
+        }
+    })
+
+</script>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        .mainContainer{
+            border: 5px solid;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 10px;
+        }
+        table, th, td {
+            width:40px;
+            height: 40px;
+           border: 5px solid turquoise;
+        }
+        input{
+            text-align: right;
+        }
+
+        button{
+
+            width: 40px;
+            height: 40px;
+
+        }
+      #result{
+        width:80px;
+      }
+
+      body{
+          background: teal;
+      }
+
+
+       
+     </style>
+</head>
+<body>
+    <div class="mainContainer">
+<table>  
+    <tr>
+        <td><button class="button" >C</button></td>
+        <td><button class="button" >B</button></td>
+        <td colspan="2"><input type="text" placeholder="0" id = "result"></td>
+    </tr>
+    <tr>
+        <td><button class="button" >+</button></td>
+        <td><button class="button" >1</button></td>
+        <td><button class="button" >2</button></td>
+        <td><button class="button" >3</button></td>
+
+    </tr>
+        <td><button>-</button></td>
+        <td><button>4</button></td>
+        <td><button>5</button></td>
+        <td><button>6</button></td>
+    <tr>
+        <td><button>*</button></td>
+        <td><button>7</button></td>
+        <td><button>8</button></td>
+        <td><button>9</button></td>
+    </tr>
+    <tr>
+        <td><button>/</button></td>
+        <td><button>.</button></td>
+        <td><button>0</button></td>
+        <td><button>=</button></td>
+    </tr>
+   
+</table>
+
+</div>
+
+    <script>
+
+    var table=document.querySelector("table")
+    let inputTxt=document.querySelector("input")
+    var opr=["+","-","*","/","."];
+
+    table.addEventListener("click",(event)=>{
+
+        if(event.target.tagName=="BUTTON"){
+            var textvalue=inputTxt.value; //10+20+ 
+            var lastChar=textvalue[textvalue.length-1]; //+
+            var firstChar= textvalue[0];
+            var removeLastnString=textvalue.slice(0,textvalue.length-1) //10+20
+
+            console.log("removed last character",removeLastnString)
+           if(event.target.innerHTML=="C"){
+                inputTxt.value='';
+           }
+           else if(event.target.innerHTML=="="){
+                if(!opr.includes(lastChar)){
+                    inputTxt.value=eval(textvalue)
+                }  
+                else{
+                    console.log("@@@@@@@@@",removeLastnString);
+
+                    inputTxt.value=  removeLastnString;
+                } 
+           }
+           else if(event.target.innerHTML=="B"){
+
+            inputTxt.value =  inputTxt.value.toString().slice(0,-1);
+                
+           }
+           else{
+                var currentValue=event.target.innerHTML;//+
+
+                console.log(">>>>>>>>>>>",currentValue)
+              
+
+                if(opr.includes(currentValue) && opr.includes(lastChar)){
+
+                    console.log("$$$$$$$")
+                                  //12345
+                    inputTxt.value=removeLastnString + currentValue;
+                }
+                // else if(opr.includes(currentValue) && (currentValue =='*')){
+
+                //     // console.log("###############")
+
+                //     // currentValue = '';
+
+                //     // inputTxt.value += currentValue;
+
+                // }
+               
+                else{
+
+                   
+                    inputTxt.value=textvalue+currentValue
+                }
+                console.log(currentValue)
+           }
+        }
+    });
+
+       
+      
+
+       
+
+        // if(c_button[0].innerHTML == "c")
+        // {
+        //     console.log("hello");
+        // }
+    </script>
+</body>
+</html>
